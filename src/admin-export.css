@@ -1,0 +1,50 @@
+.panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.user-directory-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.user-directory-toolbar .admin-search {
+  max-width: 420px;
+}
+
+.user-directory-toolbar .table-muted {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .user-directory-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .user-directory-toolbar .admin-search {
+    max-width: none;
+  }
+}
+
+.account-block-button:not(.is-blocked) {
+  border-color: rgba(231, 95, 105, .62);
+  color: #f0aeb3;
+}
+
+.account-block-button:not(.is-blocked):hover {
+  border-color: rgba(231, 95, 105, .95);
+  background: #d64d56;
+  color: #130d0d;
+}
+
+.account-block-button.is-blocked {
+  border-color: rgba(96, 228, 231, .4);
+  color: var(--cyan);
+}

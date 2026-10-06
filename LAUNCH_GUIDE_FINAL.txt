@@ -1,0 +1,76 @@
+UNITED PLANNERS: LAUNCH GUIDE
+
+PART 1: RUN THE WEBSITE LOCALLY
+
+1. In PowerShell, go to the project folder:
+   cd "C:\Users\Students\Desktop\united planners"
+
+2. Install dependencies:
+   npm install
+
+3. Start Vite:
+   npm run dev
+
+4. Note the local port Vite prints, for example 5173. Leave this terminal running.
+
+
+PART 2: INSTALL AND SET UP NGROK
+
+1. Download Ngrok from the official Ngrok website.
+
+2. Install Ngrok on your computer.
+
+3. Open a new PowerShell terminal.
+
+4. Check that Ngrok is installed:
+   ngrok version
+
+5. If Ngrok asks you to authenticate, log in to your Ngrok account and follow the setup instructions to add your authentication token.
+
+6. Check that the setup is working:
+   ngrok config check
+
+
+PART 3: SHARE THE WEBSITE WITH NGROK
+
+1. Open a second PowerShell terminal if you have not already done so.
+
+2. Start an Ngrok tunnel to the port printed by Vite. Replace 5173 if Vite printed another port:
+   ngrok http 5173
+
+3. Ngrok will display a public HTTPS forwarding URL.
+
+4. Open the HTTPS URL in a browser to test the public version of the website.
+
+5. Share the HTTPS forwarding URL with your friend. Leave both Vite and Ngrok running while your friend uses the site.
+
+
+PART 4: CLOSE THE TUNNEL
+
+1. In the Ngrok terminal, press Ctrl+C to close the public tunnel.
+
+2. To also stop the local website, switch to the Vite terminal and press Ctrl+C.
+
+
+TROUBLESHOOTING
+
+- If Vite uses a different port, use that port in the Ngrok command.
+  Example:
+  ngrok http 5174
+
+- If Ngrok does not start, run:
+  ngrok version
+  to check that it is installed correctly.
+
+- If the website cannot be reached, make sure both the Vite terminal and Ngrok terminal are still running.
+
+- If you get a 403 Forbidden error, check that you are using the correct Vite port and that the Vite server is running.
+
+
+DATA NOTES
+
+- Supabase is already configured for the United Planners website and is used for the website's connected data/backend.
+- The Ngrok URL serves the app from the computer running Vite, while the configured Supabase services continue to provide the connected backend/data.
+- Keep your Supabase project credentials and keys secure. Do not share private keys or commit sensitive credentials to public files.
+- Make sure the Vite website and Ngrok tunnel are both running when someone needs to access the site through the public Ngrok URL.
+- Free Ngrok URLs may change each time a tunnel is started.
